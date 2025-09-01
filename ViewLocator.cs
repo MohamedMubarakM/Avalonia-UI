@@ -4,8 +4,11 @@ using Avalonia.Controls.Templates;
 
 namespace Avalonia1
 {
+
     public sealed class ViewLocator : IDataTemplate
     {
+
+        
         public bool SupportsRecycling => true;
 
         public Control? Build(object? data)
