@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Avalonia1.ViewModels"
+        x:Class="Avalonia1.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Width="1000" Height="650"
+        Title="Simple UI - 5 Pages">
+
+  <DockPanel>
+    <!-- Sidebar -->
+    <Border DockPanel.Dock="Left" Width="180" Background="#222" Padding="10">
+      <StackPanel Spacing="6">
+        <Button Content="Home"   Command="{Binding NavigateCommand}" CommandParameter="{x:Static vm:PageType.Home}"/>
+        <Button Content="Page 1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static vm:PageType.Page1}"/>
+        
+      </StackPanel>
+    </Border>
+
+    <!-- Main content -->
+    <Border Background="#333" Padding="16" Margin="12" CornerRadius="10">
+      <ContentControl Content="{Binding CurrentView}"/>
+    </Border>
+  </DockPanel>
+</Window>
