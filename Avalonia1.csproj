@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.3.4" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.4" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.3.4" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.4" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.4" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.3.4">
+      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+      <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+    <PackageReference Include="Eremex.Avalonia.Controls" Version="1.1.144" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\BoxView.axaml.cs">
+      <DependentUpon>BoxView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SearchView.axaml.cs">
+      <DependentUpon>SearchView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ListView.axaml.cs">
+      <DependentUpon>ListView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\BrainView.axaml.cs">
+      <DependentUpon>BrainView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\FolderView.axaml.cs">
+      <DependentUpon>FolderView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SettingsView.axaml.cs">
+      <DependentUpon>SettingsView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ErrorView.axaml.cs">
+      <DependentUpon>ErrorView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Homepageview.axaml.cs">
+      <DependentUpon>Homepageview.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
