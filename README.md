@@ -1,6 +1,4 @@
-cd C:\Users\j\Documents\Avalonia2\Avalonia-UI
 
-@'
 # Avalonia UI
 
 Minimal Avalonia app with dark theme and sample pages.
